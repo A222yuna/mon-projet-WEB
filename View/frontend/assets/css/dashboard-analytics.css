@@ -1,0 +1,317 @@
+/**
+ * Dashboard Analytics Styles
+ * Enhanced styling for analytics components and interactive elements
+ */
+
+/* Analytics Dashboard Cards */
+.analytics-dashboard {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.analytics-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none !important;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+.analytics-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.analytics-card:hover::before {
+    opacity: 1;
+}
+
+.analytics-card .card-body {
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.analytics-card .card-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.analytics-card .card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.analytics-card .card-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Color Variants */
+.analytics-card.border-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.analytics-card.border-success {
+    background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+}
+
+.analytics-card.border-warning {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.analytics-card.border-info {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.analytics-card.border-danger {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Progress Bars */
+.progress {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.bg-gradient-success {
+    background: linear-gradient(90deg, #56ab2f 0%, #a8e6cf 100%) !important;
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%) !important;
+}
+
+.bg-gradient-info {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%) !important;
+}
+
+/* Notification System */
+.notification-container {
+    max-width: 400px;
+}
+
+.notification-container .alert {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification-container .alert-success {
+    background: linear-gradient(135deg, rgba(86, 171, 47, 0.9), rgba(168, 230, 207, 0.9));
+    color: white;
+    border-left: 4px solid #56ab2f;
+}
+
+.notification-container .alert-danger {
+    background: linear-gradient(135deg, rgba(250, 112, 154, 0.9), rgba(254, 225, 64, 0.9));
+    color: white;
+    border-left: 4px solid #fa709a;
+}
+
+.notification-container .alert-warning {
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.9), rgba(245, 87, 108, 0.9));
+    color: white;
+    border-left: 4px solid #f093fb;
+}
+
+.notification-container .alert-info {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.9), rgba(0, 242, 254, 0.9));
+    color: white;
+    border-left: 4px solid #4facfe;
+}
+
+/* Chart Containers */
+.chart-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chart-container .card-header {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Loading States */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .analytics-dashboard {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .analytics-card .card-value {
+        font-size: 1.8rem;
+    }
+    
+    .analytics-card .card-icon {
+        font-size: 2rem;
+    }
+    
+    .notification-container {
+        left: 10px;
+        right: 10px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .analytics-card .card-value {
+        font-size: 1.5rem;
+    }
+    
+    .analytics-card .card-title {
+        font-size: 0.8rem;
+    }
+}
+
+/* Hover Effects for Interactive Elements */
+.analytics-card,
+.progress,
+.notification-container .alert {
+    cursor: pointer;
+}
+
+.analytics-card:active {
+    transform: translateY(-3px) scale(1.01);
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+    .analytics-dashboard {
+        background: rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .chart-container {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .analytics-card {
+        border: 2px solid white !important;
+    }
+    
+    .progress {
+        border: 1px solid white;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .analytics-card,
+    .progress-bar,
+    .notification-container .alert {
+        transition: none;
+        animation: none;
+    }
+    
+    .progress-bar::before {
+        animation: none;
+    }
+}
