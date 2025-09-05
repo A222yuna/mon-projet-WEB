@@ -1,4 +1,4 @@
-<?php
+<?php 
 // Quick database test for document submission
 include_once 'config.php';
 
